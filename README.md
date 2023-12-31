@@ -1,9 +1,11 @@
+# Zentrade
 
 ## Table of Contents
 
 - [Technologies Used](#features)
-- [Diagrams](#diagrams)
+- [Diagram](#diagram)
 - [Getting Started](#getting-started)
+- [Postmen Collection](#Postman-Collection)
 - [Overview](#overview)
 - [Contributing](#contributing)
   
@@ -16,9 +18,10 @@ Make sure you have the following installed before running the application:
 - [Typescript](https://www.w3schools.com/typescript/) 
 - [Git (Version Control System)](https://git-scm.com/downloads/)
 
-## Diagrams
+## Diagram
 
-**Flow Diagram** ![Screenshot (368)](https://github.com/HARDIK2207/Zentrade/assets/84044856/5133a668-6346-4859-aa25-dfc68fac4899)
+**Flow Diagram** 
+![Screenshot (368)](https://github.com/HARDIK2207/Zentrade/assets/84044856/5133a668-6346-4859-aa25-dfc68fac4899)
 
 ## Getting Started
 
