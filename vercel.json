@@ -1,0 +1,10 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "headers": { "Cache-Control": "public, max-age=3600" }
+    }
+  ],
+  "cleanUrls": true
+}
