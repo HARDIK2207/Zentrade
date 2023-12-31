@@ -1,0 +1,78 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Subcategory</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Popularity</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+    </table>
+
+    <script>
+        fetch('https://s3.amazonaws.com/open-to-cors/assignment.json')
+        .then(response => response.json())
+        .then(data => {
+            if (data && typeof data === 'object') {
+                if (data.hasOwnProperty('products')) {
+                    const products = Array.isArray(data.products) ? data.products : Object.values(data.products);
+                    
+                    products.forEach(product => {
+                        console.log(product); // Log the entire product object to the console
+
+                        const tableRow = `<tr>
+                            <td>${product.Subcategory || 'N/A'}</td>
+                            <td>${product.Title || 'N/A'}</td>
+                            <td>${product.Price || 'N/A'}</td>
+                            <td>${product.Popularity || 'N/A'}</td>
+                        </tr>`;
+                        document.getElementById('productTableBody').insertAdjacentHTML('beforeend', tableRow);
+                    });
+                } else {
+                    console.log('The "products" property is missing in the data.');
+                }
+            } else {
+                console.log('The data is not an object.');
+            }
+        })
+        .catch(error => console.log(error));
+    </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetching Example</title>
+</head>
+<body>
+
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Subcategory</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Popularity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table rows will be inserted here dynamically -->
+    </tbody>
+</table>
+
+<script src="app.js"></script>
+</body>
+</html>

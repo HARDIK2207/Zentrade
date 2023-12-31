@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+#loginForm {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: black;
+    border-radius: 8px;
+}
+.login-container {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #0e0e0e;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+}
+h2{
+    margin-bottom:0;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     margin: 10px 0 10px auto;;
+}
+button:hover {
+    background-color: darkgreen;
+}
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+.forgot-password {
+    margin-top: 10px; /* Adjust the margin-top to create space between button and forgot password link */
+    text-align: center; /* Center the text within the .forgot-password element */
+}

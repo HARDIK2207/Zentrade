@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Company Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <style>
+    body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+    }
+    .row.content {
+        height: 550px;
+    }
+
+    #charts {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px;
+    }
+
+    canvas {
+        max-width: 45%; /* Adjust the size as needed */
+        border: 1px solid #ccc;
+        margin: 10px; /* Add margin to provide space between charts */
+    }
+
+    .well-lg {
+        min-height: 150px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        margin: 10px; /* Add margin to provide space between charts and boxes */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    
+    <br>
+    
+    <div class="col-sm-12">
+      
+      <div class="row">
+        <!-- 8 Boxes (Well-lg) -->
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4 style="color:green;">$406,411.07</h4>
+            <p>Total Revenue</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>$650</h4>
+            <p>Total Jobs Avg</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>650</h4>
+            <p>Tickets Created</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>735</h4>
+            <p>Tickets Scheduled</p> 
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Empty Row for Spacing -->
+      </div>
+
+      <div class="row">
+        <!-- 4 More Boxes (Well-lg) -->
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4 style="color:red;">$110,448.8</h4>
+            <p>Outstanding Amount</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>105</h4>
+            <p>Memberships Sold</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>436</h4>
+            <p>Jobs Completed</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well well-lg">
+            <h4>65</h4>
+            <p>Total Canceled</p> 
+          </div>
+        </div>
+      </div>
+
+      <!-- Add canvas elements for the bar graphs -->
+      <div class="row" id="charts">
+        <canvas id="myChart" style="max-width: 45%;">Revenue By Job Location</canvas>
+        <canvas id="myChart1" style="max-width: 45%;">Revenue By Job Type</canvas>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+    var xValues = ["Everett", "France", "Lynnwood", "USA", "Argentina","Edmonds"];
+    var yValues = [6000, 4900, 4400, 2500, 2400, 2000];
+    var barColors = ["lightgreen", "lightgreen","lightgreen","lightgreen","lightgreen","lightgreen"];
+    
+    new Chart("myChart", {
+      type: "horizontalBar", // Change the type to "horizontalBar"
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "Revenue By Job Location"
+        }
+      }
+    });
+    var xValues1 = ["Service Plumbing", "Bid Work HVAC", "Service HVAC", "Bid Work Plumbing", "Maintenance","HWT Replacement","Material Sale"];
+    var yValues1 = [160000,140000,80000,60000,45000,30000,20000];
+    var barColors1 = ["lightgreen", "summer sky","lightgreen","lightgreen","lightgreen","lightgreen"];
+    
+    new Chart("myChart1", {
+      type: "horizontalBar", // Change the type to "horizontalBar"
+      data: {
+        labels: xValues1,
+        datasets: [{
+          backgroundColor: barColors1,
+          data: yValues1
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "Revenue By Job Type"
+        }
+      }
+    });
+</script>
+</body>
+</html>
